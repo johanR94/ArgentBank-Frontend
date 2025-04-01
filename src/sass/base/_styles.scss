@@ -1,0 +1,38 @@
+// @use "/src/sass/utils/_variables.scss";
+// @use "/src/sass/utils/_mixins.scss";
+@use '../layout/_header.scss';
+@use '../layout/_footer.scss';  
+@use '../layout/_balance.scss';
+@use '../layout/_banner.scss';
+@use '../layout/_layout.scss';
+@use '../layout/_feature.scss';
+@use '../layout/_header-profile.scss';
+@use '../layout/_form.scss';
+@use '../pages/_home.scss';
+@use '../pages/_error.scss'; 
+@use '../pages/_login.scss';  
+@use '../pages/_profile.scss';
+
+
+
+
+html {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+// Compare this snippet from src/sass/layout/_header.scss:
