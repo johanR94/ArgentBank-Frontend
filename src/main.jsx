@@ -3,8 +3,6 @@ import { Provider } from "react-redux";
 import store from "./utils/store.js";
 import App from "./App.jsx";
 
-
-
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <App />

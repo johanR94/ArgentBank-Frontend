@@ -5,8 +5,10 @@ import { useLocation } from "react-router-dom";
 export default function Layout({ children }) {
   const location = useLocation();
 
-
-  const mainClass = location.pathname === "/login" || location.pathname === "/profile" ? "main bg-dark" : "main";
+  const mainClass =
+    location.pathname === "/login" || location.pathname === "/profile"
+      ? "main bg-dark"
+      : "main";
   return (
     <>
       <Header />

@@ -6,11 +6,10 @@ export default function Home() {
     <>
       <Banner />
       <section className="features">
-      {featureData.map((item) => (
-        <Feature key={item.id} {...item} />
-      ))}
-    </section>
-
+        {featureData.map((item) => (
+          <Feature key={item.id} {...item} />
+        ))}
+      </section>
     </>
   );
 }
