@@ -21,14 +21,13 @@ const [rememberMe, setRememberMe] = React.useState(false);
     if (token && window.location.pathname !== "/profile") {
         navigate("/profile");
     }
-}, [token, navigate]);
+}, [token]);
 const fields = React.useMemo(() => [
   { name: "email", type: "email", label: "Email" },
   { name: "password", type: "password", label: "Password" },
 ], []);
 const handleRememberMe = (e) => {
    setRememberMe(e.target.checked) };
-  console.log(rememberMe, "status");
   return (
     <div className="sign-in-content">
       <h1>Sign In</h1>

@@ -1,20 +1,20 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink,useLocation  } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react';
-import { loginSuccess } from '../actions/login.actions';
+import { loginSuccess,logOut } from '../actions/login.actions';
 import { fetchUserData } from '../actions/user.actions';
 import logo from "../assets/images/argentBankLogo.avif";
 
 export default function Header() {
-  const location = useLocation();
   const dispatch = useDispatch();
-  const { userName, isLoggedIn } = useSelector((state) => state.user);
-console.log(userName, "userName")
-  console.log(isLoggedIn, "isLoggedIn")
+  const {firstName, isLoggedIn } = useSelector((state) => state.user);
+  const location = useLocation(); // Récupère l'emplacement actuel
  
-  // const handleLogout = () => {
-  //   dispatch(logout());
-  // }
+  const handleLogout = () => {
+    dispatch(logOut());
+    localStorage.removeItem('jwtToken'); // Supprime le token du stockage local
+    sessionStorage.removeItem('jwtToken'); // Supprime le token du stockage de session
+  }
   useEffect(() => {
     const token = localStorage.getItem('jwtToken') || sessionStorage.getItem('jwtToken');
     if (token) {
@@ -25,18 +25,28 @@ console.log(userName, "userName")
 
   return (
     <>
-      {isLoggedIn && location.pathname === "/profile" ? (
-        <div className="header">
-          <h1>
-            Welcome back
-            <br />
-            {userName}!
-          </h1>
-          <button className="edit-button">Edit Name</button>
-          {/* <button className="main-nav-item" onClick={handleLogout}>
-            Logout
-          </button> */}
-        </div>
+      {isLoggedIn ? (
+      <nav className="main-nav">
+      <NavLink className="main-nav-logo" to="/">
+        <img
+          className="main-nav-logo-image"
+          src={logo}
+          alt="Argent Bank Logo"
+        />
+        <h1 className="sr-only">Argent Bank</h1>
+      </NavLink>
+      <div>
+        <NavLink className="main-nav-item" to="/profile">
+          <i className="fa fa-user-circle"></i>
+          {firstName}
+        </NavLink>
+
+        <NavLink className="main-nav-item" to="/" onClick={handleLogout}>
+          <i className="fa fa-sign-out"></i>
+          Sign Out
+        </NavLink>
+      </div>
+    </nav>
       ) : (
         <nav className="main-nav">
           <NavLink className="main-nav-logo" to="/">

@@ -13,8 +13,8 @@ export const fetchUserFailure = (error) => ({
   error,
 });
 
+
 export const fetchUserData = (token) => async (dispatch) => {
-  console.log('Fetching user data with token:', token); 
   dispatch(fetchUserRequest());
   try {
     const response = await axios.get(
@@ -25,13 +25,9 @@ export const fetchUserData = (token) => async (dispatch) => {
       }
       
     );
-    console.log('Token used for fetching user data:', token)
-    console.log('Response:', response.data); 
     const userData = response.data.body; 
     dispatch(fetchUserSuccess(userData)); 
-    console.log('User data fetched successfully:', userData); 
   } catch (error) {
-            console.error('Error fetching user data:', error.response?.data || error.message); // Log de l'erreur
     dispatch(fetchUserFailure(error.response?.data?.message || 'Failed to fetch user data'));
   }
 };

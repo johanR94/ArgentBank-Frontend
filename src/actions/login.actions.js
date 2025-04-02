@@ -19,8 +19,8 @@ import { fetchUserData } from './user.actions';
     type: 'REMEMBER_ME',
     rememberMe: true,
   });
-  export const logout = () => ({
-    type: 'LOGOUT',
+  export const logOut = () => ({
+    type: 'LOG_OUT',
   });
 
   export const login = (email, password,rememberMe) => async (dispatch) => {

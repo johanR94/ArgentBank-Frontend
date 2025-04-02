@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Layout from "./components/Layout";
+import ProtectedRoute from "./components/ProtectedRoute";
 import "./css/styles.css";
 
 function App() {
@@ -12,7 +13,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" 
+          element={
+            <ProtectedRoute >
+              <Profile />
+            </ProtectedRoute>}
+            />
         </Routes>
       </Layout>
     </Router>

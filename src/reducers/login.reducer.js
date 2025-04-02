@@ -24,7 +24,7 @@ export default function loginReducer(state = initialState, action) {
             return {
                 ...state,
                 token: null,
-                error: action.error,
+                error:action.error,
             }
             
             case 'REMEMBER_ME':
@@ -33,7 +33,11 @@ export default function loginReducer(state = initialState, action) {
                 rememberMe: action.payload,
                 
               }
-     
+              case 'LOG_OUT':
+                return {
+                  ...initialState,
+                };
+          
       default:
         return state
     }

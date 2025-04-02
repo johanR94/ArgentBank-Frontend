@@ -38,12 +38,11 @@ export default function userReducer(state = initialState, action) {
         loading: false,
         error: action.error,
       };
-
-    case 'LOGOUT':
-      return {
-        ...initialState,
-      };
-
+      case 'LOG_OUT':
+        return {
+          ...initialState,
+        };
+ 
     default:
       return state;
   }
