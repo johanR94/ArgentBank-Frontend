@@ -1,0 +1,17 @@
+.error {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+  &-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #00bc77;
+  }
+  &-description {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color:#30533C;
+  }
+}

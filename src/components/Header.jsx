@@ -1,28 +1,17 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { loginSuccess, logOut } from "../actions/login.actions";
-import { fetchUserData } from "../actions/user.actions";
+import { logOut } from "../redux/actions/login.actions";
 import logo from "../assets/images/argentBankLogo.avif";
 
 export default function Header() {
   const dispatch = useDispatch();
-  const { firstName, isLoggedIn } = useSelector((state) => state.user);
-  const location = useLocation(); // Récupère l'emplacement actuel
+  const { userName, isLoggedIn } = useSelector((state) => state.user);
 
   const handleLogout = () => {
     dispatch(logOut());
-    localStorage.removeItem("jwtToken"); // Supprime le token du stockage local
-    sessionStorage.removeItem("jwtToken"); // Supprime le token du stockage de session
+    localStorage.removeItem("jwtToken"); 
+    sessionStorage.removeItem("jwtToken"); 
   };
-  useEffect(() => {
-    const token =
-      localStorage.getItem("jwtToken") || sessionStorage.getItem("jwtToken");
-    if (token) {
-      dispatch(loginSuccess(token)); // Restaure le statut connecté
-      dispatch(fetchUserData(token)); // Récupère les données utilisateur
-    }
-  }, [dispatch]);
 
   return (
     <>
@@ -39,7 +28,7 @@ export default function Header() {
           <div>
             <NavLink className="main-nav-item" to="/profile">
               <i className="fa fa-user-circle"></i>
-              {firstName}
+              {userName}
             </NavLink>
 
             <NavLink className="main-nav-item" to="/" onClick={handleLogout}>

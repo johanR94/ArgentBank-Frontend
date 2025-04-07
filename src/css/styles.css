@@ -254,8 +254,55 @@
   color: white;
 }
 
+.error {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+.error-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #00bc77;
+}
+.error-description {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #30533C;
+}
+
 .bg-dark {
   background-color: #12002b;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.edit-form input {
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.edit-form input[readonly] {
+  background-color: #bbbbbb;
+}
+.edit-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.edit-form-buttons button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
 }
 
 html {
