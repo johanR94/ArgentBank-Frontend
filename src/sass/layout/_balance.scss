@@ -1,3 +1,5 @@
+@use "../utils/_mixins.scss";
+
 .account {
   display: flex;
   justify-content: space-between;
@@ -11,28 +13,24 @@
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
-}
-
-.account-amount {
-  margin: 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.account-amount-description {
+  &-amount {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+&-amount-description {
   margin: 0;
 }
-
-.account-title {
+&-title {
   margin: 0;
   padding: 0;
   font-size: 1rem;
   font-weight: normal;
 }
-
-.account-content-wrapper {
+&-content-wrapper {
   width: 100%;
   flex: 0;
+}
 }
 
 .transaction-button {
@@ -45,4 +43,33 @@
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+}
+
+@include mixins.min-width-720 {
+  .account {
+    flex-direction: row;
+    &-content-wrapper.cta {
+      flex: 0;
+    }
+  }
+  .transaction-button {
+    width: 200px;
+  }
+}
+@include mixins.max-width-720 {
+  .account {
+    flex-direction: column;
+    &-content-wrapper.cta {
+      display: flex;
+      justify-content: flex-end;
+    }
+    &-amount {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+  .transaction-button {
+    width: 200px;
+  }
 }

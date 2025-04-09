@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <section className="features">
+      <section className="feature">
         {featureData.map((item) => (
           <Feature key={item.id} {...item} />
         ))}

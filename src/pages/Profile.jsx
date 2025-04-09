@@ -30,12 +30,11 @@ export default function Profile() {
   return (
     <>
       {!toggleEdit && (
-        <div className="header">
-          <h1>
+        <div className="welcome">
+          <h1 className="welcome-title">
             Welcome back
             <br />
-            {firstName}
-            {lastName}!
+            {firstName} {lastName}!
           </h1>
 
           <button className="edit-button" onClick={() => setToggleEdit(true)}>
@@ -45,18 +44,22 @@ export default function Profile() {
       )}
       {toggleEdit && (
         <>
-          <h1 className="edit-mode-title">Editing User info</h1>
+          <h2 className="edit-mode-title">Editing User info</h2>
 
           <form className="edit-form" onSubmit={editName}>
             <input
               type="text"
+              id="username"
+              name="username"
+              autoComplete="username"
               placeholder={userName}
               value={newUserName}
               onChange={(e) => setNewUserName(e.target.value)}
+              maxLength={15}
               required
             />
-            <input type="text" placeholder={firstName} readOnly />
-            <input type="text" placeholder={lastName} readOnly />
+            <input type="text" id="first-name" name="first-name" autoComplete="given-name" placeholder={firstName} readOnly />
+            <input type="text" id="last-name" name="last-name" autoComplete="family-name" placeholder={lastName} readOnly />
             <div className="edit-form-buttons">
               <button type="submit">Save</button>
               <button type="button" onClick={() => setToggleEdit(false)}>

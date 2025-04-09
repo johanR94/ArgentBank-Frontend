@@ -18,6 +18,7 @@ export default function Form({ fields, onSubmit, buttonText, children }) {
             id={field.name}
             name={field.name}
             placeholder={field.placeholder || ""}
+            autoComplete={field.autoComplete || "on"}
           />
         </div>
       ))}

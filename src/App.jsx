@@ -5,7 +5,7 @@ import Profile from "./pages/Profile";
 import Error from "./pages/Error";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
-import "./css/styles.css";
+import "./css/styles.min.css";
 
 function App() {
   return (

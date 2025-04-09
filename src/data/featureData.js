@@ -1,7 +1,11 @@
+import chatIcon from "../assets/icons/icon-chat-min.png";
+import moneyIcon from "../assets/icons/icon-money-min.png";
+import securityIcon from "../assets/icons/icon-security-min.png";
+
 const featureData = [
   {
     id: 1,
-    img: "./img/icon-chat.png",
+    img:chatIcon,
     alt: "Chat Icon",
     title: "You are our #1 priority",
     content:
@@ -9,7 +13,7 @@ const featureData = [
   },
   {
     id: 2,
-    img: "./img/icon-money.png",
+    img: moneyIcon,
     alt: "Money Icon",
     title: "More savings means higher rates",
     content:
@@ -17,7 +21,7 @@ const featureData = [
   },
   {
     id: 3,
-    img: "./img/icon-security.png",
+    img: securityIcon,
     alt: "Security Icon",
     title: "Security you can trust",
     content:

@@ -1,3 +1,9 @@
+.welcome  {
+  color: #fff;
+}
+.edit-mode-title{
+  color: #fff;
+}
 .edit-form {
   display: flex;
   flex-direction: column;
@@ -17,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    gap: 10px;
     button {
         border-color: #00bc77;
         background-color: #00bc77;
@@ -25,4 +32,12 @@
         padding: 10px;
     }
   }
+}
+.edit-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 15px;
 }

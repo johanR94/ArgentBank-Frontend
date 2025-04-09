@@ -1,0 +1,22 @@
+@mixin min-width-720 {
+    @media (min-width: 720px) {
+        @content;
+    }
+}
+
+@mixin min-width-920 {
+    @media (min-width: 920px) {
+        @content;
+    }
+}
+@mixin max-width-720 {
+    @media (max-width: 720px) {
+        @content;
+    }
+}
+
+@mixin min-width-1600 {
+    @media (min-width: 1600px) {
+        @content;
+    }
+}

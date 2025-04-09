@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logOut } from "../redux/actions/login.actions";
-import logo from "../assets/images/argentBankLogo.avif";
+import logo from "../assets/images/argentBankLogo1.avif";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -9,8 +9,8 @@ export default function Header() {
 
   const handleLogout = () => {
     dispatch(logOut());
-    localStorage.removeItem("jwtToken"); 
-    sessionStorage.removeItem("jwtToken"); 
+    localStorage.removeItem("jwtToken");
+    sessionStorage.removeItem("jwtToken");
   };
 
   return (
@@ -25,8 +25,13 @@ export default function Header() {
             />
             <h1 className="sr-only">Argent Bank</h1>
           </NavLink>
-          <div>
-            <NavLink className="main-nav-item" to="/profile">
+          <div className="main-nav-container">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "main-nav-item router-link-exact-active" : "main-nav-item"
+              }
+              to="/profile"
+            >
               <i className="fa fa-user-circle"></i>
               {userName}
             </NavLink>
@@ -44,11 +49,17 @@ export default function Header() {
               className="main-nav-logo-image"
               src={logo}
               alt="Argent Bank Logo"
+              loading="lazy"
             />
             <h1 className="sr-only">Argent Bank</h1>
           </NavLink>
-          <div>
-            <NavLink className="main-nav-item" to="/login">
+          <div className="main-nav-container">
+            <NavLink
+            className={({ isActive }) =>
+              isActive ? "main-nav-item router-link-exact-active" : "main-nav-item"
+            }
+              to="/login"
+            >
               <i className="fa fa-user-circle"></i>
               Sign In
             </NavLink>

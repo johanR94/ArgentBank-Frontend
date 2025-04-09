@@ -24,8 +24,8 @@ export default function Login() {
   }, [token, navigate]);
   const fields = useMemo(
     () => [
-      { name: "email", type: "email", label: "Email" },
-      { name: "password", type: "password", label: "Password" },
+      { name: "email", type: "email", label: "Email" ,autocomplete: "email"},
+      { name: "password", type: "password", label: "Password",  autocomplete: "current-password" },
     ],
     []
   );
