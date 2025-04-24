@@ -12,7 +12,7 @@ export default function Balance({ status, amount, description }) {
           <p className="account-amount-description">{description}</p>
         </div>
         <div className="account-content-wrapper cta">
-          {(!transaction && (
+          {(!transaction && ( // If transaction is false, show the button to view transactions
             <button
               className="transaction-button"
               onClick={() => setTransaction(true)}
@@ -20,7 +20,7 @@ export default function Balance({ status, amount, description }) {
               View Transactions
             </button>
           )) ||
-            (transaction && (
+            (transaction && ( // If transaction is true, show the button to hide transactions
               <button
                 className="transaction-button"
                 onClick={() => setTransaction(false)}
@@ -31,6 +31,7 @@ export default function Balance({ status, amount, description }) {
         </div>
       </div>
       {transaction && <Transaction />}
+      {/* Render the Transaction component when transaction is true*/}
     </section>
   );
 }

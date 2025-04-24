@@ -2,6 +2,7 @@ import chatIcon from "../assets/icons/icon-chat-min.png";
 import moneyIcon from "../assets/icons/icon-money-min.png";
 import securityIcon from "../assets/icons/icon-security-min.png";
 
+// This file contains the data for the features section of the application
 const featureData = [
   {
     id: 1,

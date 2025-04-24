@@ -1,3 +1,4 @@
+// This file contains the transactions data for the application.
 const transactions = [
   {
     date: "27/02/20",

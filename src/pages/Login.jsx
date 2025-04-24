@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../redux/actions/login.actions";
 import Form from "../components/Form";
 
+/// This component handles the login functionality of the application
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -15,13 +16,14 @@ export default function Login() {
     dispatch(login(email, password, rememberMe));
   };
 
-  // Redirigez vers la page de profil si le token est défini
+  // Redirect to the profile page if the user is already logged in
   useEffect(() => {
     if (token && window.location.pathname !== "/profile") {
       navigate("/profile", { replace: true });
     }
   }, [token, navigate]);
   const fields = useMemo(
+    // This memorizes the fields to avoid unnecessary re-renders
     () => [
       {
         name: "email",
@@ -38,6 +40,7 @@ export default function Login() {
     ],
     []
   );
+  // This function handles the "Remember me" checkbox state
   const handleRememberMe = (e) => {
     setRememberMe(e.target.checked);
   };
@@ -55,7 +58,8 @@ export default function Login() {
           <label htmlFor="remember-me">Remember me</label>
         </div>
       </Form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>} //
+      {/* Display error message if there is an error*/}
     </div>
   );
 }

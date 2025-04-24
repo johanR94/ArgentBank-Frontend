@@ -8,7 +8,8 @@ export default function Layout({ children }) {
   const mainClass =
     location.pathname === "/login" || location.pathname === "/profile"
       ? "main bg-dark"
-      : "main";
+      : "main"; // Main class name based on the current path
+  // If the path is /login or /profile, apply the bg-dark class to the main element
   return (
     <>
       <Header />

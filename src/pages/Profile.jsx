@@ -5,20 +5,23 @@ import Balance from "../components/Balance";
 
 export default function Profile() {
   const dispatch = useDispatch();
-  const { firstName, lastName, userName } = useSelector((state) => state.user);
+  const { firstName, lastName, userName } = useSelector((state) => state.user); // Get user data from the Redux store
   const [toggleEdit, setToggleEdit] = useState(false);
   const [newUserName, setNewUserName] = useState(userName || "");
 
+  // This function handles the edit username functionality
   const editName = (e) => {
     e.preventDefault();
     if (newUserName.trim() !== "") {
       const token =
         localStorage.getItem("jwtToken") || sessionStorage.getItem("jwtToken");
       if (!token) {
+        // If the token is not found, alert the user and return
         alert("You are not authenticated. Please log in again.");
         return;
       }
       try {
+        // Dispatch the updateUserData action with the new username
         dispatch(updateUserData(token, { userName: newUserName }));
         alert("Username updated successfully!");
         setToggleEdit(false);
@@ -28,7 +31,7 @@ export default function Profile() {
 
   return (
     <>
-      {!toggleEdit && (
+      {!toggleEdit && ( // If toggleEdit is false, show the welcome message and edit button
         <div className="welcome">
           <h1 className="welcome-title">
             Welcome back
@@ -41,7 +44,7 @@ export default function Profile() {
           </button>
         </div>
       )}
-      {toggleEdit && (
+      {toggleEdit && ( // If toggleEdit is true, show the edit form
         <>
           <h2 className="edit-mode-title">Edit User info</h2>
 

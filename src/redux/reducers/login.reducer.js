@@ -1,3 +1,6 @@
+// This reducer handles the login state of the application.
+// It manages the token, error messages, and the "Remember me" functionality.
+// The reducer listens for actions dispatched from the login component and updates the state accordingly.
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,

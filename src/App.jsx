@@ -17,6 +17,7 @@ function App() {
           <Route
             path="/profile"
             element={
+              // This route is protected and requires authentication
               <ProtectedRoute>
                 <Profile />
               </ProtectedRoute>

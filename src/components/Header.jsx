@@ -5,9 +5,10 @@ import logo from "../assets/images/argentBankLogo1.avif";
 
 export default function Header() {
   const dispatch = useDispatch();
-  const { userName, isLoggedIn } = useSelector((state) => state.user);
+  const { userName, isLoggedIn } = useSelector((state) => state.user); // Get userName and isLoggedIn from the Redux store
 
   const handleLogout = () => {
+    // Logout function to handle user logout
     dispatch(logOut());
     localStorage.removeItem("jwtToken");
     sessionStorage.removeItem("jwtToken");
