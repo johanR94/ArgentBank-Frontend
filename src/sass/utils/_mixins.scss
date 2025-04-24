@@ -1,22 +1,48 @@
+@use "../utils/_variables" as *;
+
 @mixin min-width-720 {
-    @media (min-width: 720px) {
-        @content;
-    }
+  @media (min-width: 720px) {
+    @content;
+  }
 }
 
 @mixin min-width-920 {
-    @media (min-width: 920px) {
-        @content;
-    }
+  @media (min-width: 920px) {
+    @content;
+  }
 }
 @mixin max-width-720 {
-    @media (max-width: 720px) {
-        @content;
-    }
+  @media (max-width: 720px) {
+    @content;
+  }
 }
 
 @mixin min-width-1600 {
-    @media (min-width: 1600px) {
-        @content;
-    }
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+//button
+@mixin button-style($bg-color, $text-color) {
+  border-color: $bg-color;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: $font-weight-bold;
+  padding: $padding-small;
+  cursor: pointer;
+}
+
+//flex
+@mixin flex-container(
+  $justify: flex-start,
+  $align: stretch,
+  $direction: row,
+  $gap: 0
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
 }

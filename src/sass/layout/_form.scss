@@ -1,22 +1,24 @@
+@use "../utils/_variables" as *;
+@use "../utils/_mixins" as *;
+
 .sign-in-button {
   display: block;
   width: 100%;
   padding: 8px;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   margin-top: 1rem;
-  border-color: #00bc77;
-  background-color: #00bc77;
-  color: #fff;
+  @include button-style($primary-color, $white-color);
 }
 
 .sign-in-content {
   box-sizing: border-box;
-  background-color: white;
+  background-color: $white-color;
   width: 300px;
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
+  margin-bottom: 15px;
 }
 
 .sign-in-icon {
@@ -47,5 +49,5 @@
   font-size: 1.2rem;
 }
 .link-button {
-  color: white;
+  color: $white-color;
 }

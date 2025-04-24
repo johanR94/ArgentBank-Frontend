@@ -5,7 +5,7 @@ import securityIcon from "../assets/icons/icon-security-min.png";
 const featureData = [
   {
     id: 1,
-    img:chatIcon,
+    img: chatIcon,
     alt: "Chat Icon",
     title: "You are our #1 priority",
     content:

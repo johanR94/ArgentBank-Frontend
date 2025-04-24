@@ -28,7 +28,9 @@ export default function Header() {
           <div className="main-nav-container">
             <NavLink
               className={({ isActive }) =>
-                isActive ? "main-nav-item router-link-exact-active" : "main-nav-item"
+                isActive
+                  ? "main-nav-item router-link-exact-active"
+                  : "main-nav-item"
               }
               to="/profile"
             >
@@ -55,9 +57,11 @@ export default function Header() {
           </NavLink>
           <div className="main-nav-container">
             <NavLink
-            className={({ isActive }) =>
-              isActive ? "main-nav-item router-link-exact-active" : "main-nav-item"
-            }
+              className={({ isActive }) =>
+                isActive
+                  ? "main-nav-item router-link-exact-active"
+                  : "main-nav-item"
+              }
               to="/login"
             >
               <i className="fa fa-user-circle"></i>

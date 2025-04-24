@@ -1,0 +1,45 @@
+@use "../utils/_mixins.scss" as *;
+@use "../utils/_variables.scss" as *;
+
+.transactions {
+  width: 100%;
+}
+
+.transaction-container {
+  width: 100%;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+.transaction-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 8px;
+  margin-right: 40px;
+  &-detail {
+    font-size: 18px;
+  }
+}
+.transaction-expand {
+  width: 40px;
+}
+.transaction-card-content {
+  color: $white-color;
+  background-color: $primary-color;
+  padding: 0 15px !important;
+}
+
+.transaction-content-collapse {
+  color: $white-color;
+  background-color: $primary-color;
+}

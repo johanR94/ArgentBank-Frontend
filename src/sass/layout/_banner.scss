@@ -1,7 +1,7 @@
-@use "../utils/_mixins.scss";
+@use "../utils/_mixins.scss" as *;
 
 .hero {
-  background-image: url("../assets/images/bank-tree2_small.avif") ;
+  background-image: url("../assets/images/bank-tree2_small.avif");
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@
   }
 }
 
-@include mixins.min-width-920 {
+@include min-width-920 {
   .hero {
     height: 400px;
     background-position: 0% 33%;
@@ -48,7 +48,8 @@
     }
   }
 }
-@include mixins.min-width-1600 {
+@include min-width-1600 {
   .hero {
-    background-image: url("../assets/images/bank-tree2.avif")   }
+    background-image: url("../assets/images/bank-tree2.avif");
+  }
 }

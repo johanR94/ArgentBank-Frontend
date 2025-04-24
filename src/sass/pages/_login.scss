@@ -1,3 +1,5 @@
+@use "../utils/_variables" as *;
+@use "../utils/_mixins" as *;
 .bg-dark {
-    background-color: #12002b;
-  }
+  background-color: $dark-bg-color;
+}

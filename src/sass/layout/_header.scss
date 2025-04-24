@@ -1,4 +1,4 @@
-@use "../utils/_mixins.scss";
+@use "../utils/_mixins.scss" as *;
 
 .sr-only {
   border: 0 !important;
@@ -21,15 +21,17 @@
   padding: 5px 20px;
 
   a {
+    display: flex;
+    gap: 5px;
     font-weight: bold;
     color: #2c3e50;
 
     &.router-link-exact-active {
-      color: #42b983 ; 
+      color: #42b983;
     }
   }
 
-&-item {
+  &-item {
     text-decoration: none;
     margin-right: 0.5rem;
 
@@ -53,7 +55,7 @@
   }
 }
 
-@include mixins.max-width-720 {
+@include max-width-720 {
   .main-nav {
     justify-content: space-between;
 
@@ -68,14 +70,14 @@
     }
   }
 }
-@include mixins.min-width-720 {
+@include min-width-720 {
   .main-nav {
     &-logo-image {
       width: 200px;
     }
   }
 }
-@include mixins.min-width-1600 {
+@include min-width-1600 {
   .main-nav {
     &-logo-image {
       width: 300px;
@@ -84,6 +86,4 @@
       font-size: 1.4rem;
     }
   }
-
- 
 }

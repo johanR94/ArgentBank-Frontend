@@ -1,6 +1,5 @@
-import { useSelector } from "react-redux";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateUserData } from "../redux/actions/user.actions";
 import Balance from "../components/Balance";
 
@@ -44,9 +43,10 @@ export default function Profile() {
       )}
       {toggleEdit && (
         <>
-          <h2 className="edit-mode-title">Editing User info</h2>
+          <h2 className="edit-mode-title">Edit User info</h2>
 
           <form className="edit-form" onSubmit={editName}>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               id="username"
@@ -58,8 +58,24 @@ export default function Profile() {
               maxLength={15}
               required
             />
-            <input type="text" id="first-name" name="first-name" autoComplete="given-name" placeholder={firstName} readOnly />
-            <input type="text" id="last-name" name="last-name" autoComplete="family-name" placeholder={lastName} readOnly />
+            <label htmlFor="first-name">First Name</label>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              autoComplete="given-name"
+              placeholder={firstName}
+              readOnly
+            />
+            <label htmlFor="last-name">Last Name</label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              autoComplete="family-name"
+              placeholder={lastName}
+              readOnly
+            />
             <div className="edit-form-buttons">
               <button type="submit">Save</button>
               <button type="button" onClick={() => setToggleEdit(false)}>
@@ -76,6 +92,7 @@ export default function Profile() {
         amount="$2,082.79"
         description="Available Balance"
       />
+
       <Balance
         status="Argent Bank Savings (x6712)"
         amount="$10,928.42"

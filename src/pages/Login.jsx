@@ -1,7 +1,6 @@
-import React from "react";
+import { React, useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState, useMemo } from "react";
 import { login } from "../redux/actions/login.actions";
 import Form from "../components/Form";
 
@@ -24,8 +23,18 @@ export default function Login() {
   }, [token, navigate]);
   const fields = useMemo(
     () => [
-      { name: "email", type: "email", label: "Email" ,autocomplete: "email"},
-      { name: "password", type: "password", label: "Password",  autocomplete: "current-password" },
+      {
+        name: "email",
+        type: "email",
+        label: "Email",
+        autocomplete: "email",
+      },
+      {
+        name: "password",
+        type: "password",
+        label: "Password",
+        autocomplete: "current-password",
+      },
     ],
     []
   );

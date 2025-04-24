@@ -1,12 +1,12 @@
-// @use "/src/sass/utils/_variables.scss";
-// @use "/src/sass/utils/_mixins.scss";
+@use "../utils/_mixins.scss" as *;
+@use "../utils/_variables.scss" as *;
 @use "../layout/_header.scss";
 @use "../layout/_footer.scss";
 @use "../layout/_balance.scss";
 @use "../layout/_banner.scss";
 @use "../layout/_layout.scss";
 @use "../layout/_feature.scss";
-@use "../layout/_header-profile.scss";
+@use "../layout/_transaction.scss";
 @use "../layout/_form.scss";
 @use "../pages/_home.scss";
 @use "../pages/_error.scss";
@@ -15,7 +15,7 @@
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 html {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -33,4 +33,3 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-// Compare this snippet from src/sass/layout/_header.scss:

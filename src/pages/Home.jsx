@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import Feature from "../components/Feature";
 import featureData from "../data/featureData";
+
 export default function Home() {
   return (
     <>
