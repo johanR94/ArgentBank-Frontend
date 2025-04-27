@@ -1,15 +1,8 @@
 import axios from "axios";
-import {
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  REMEMBER_ME,
-  LOG_OUT,
-} from "./types";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, REMEMBER_ME, LOG_OUT } from "./types";
 import { fetchUserData } from "./user.actions";
 
 // This action handles the login functionality of the application
-export const loginRequest = () => ({ type: LOGIN_REQUEST });
 export const loginSuccess = (token) => ({ type: LOGIN_SUCCESS, token });
 export const loginFailure = (error) => ({ type: LOGIN_FAILURE, error });
 export const rememberMe = (remember) => ({
@@ -19,8 +12,6 @@ export const rememberMe = (remember) => ({
 export const logOut = () => ({ type: LOG_OUT });
 
 export const login = (email, password, remember) => async (dispatch) => {
-  //
-  dispatch(loginRequest());
   try {
     const response = await axios.post(
       "http://localhost:3001/api/v1/user/login",

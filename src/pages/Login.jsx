@@ -58,7 +58,7 @@ export default function Login() {
           <label htmlFor="remember-me">Remember me</label>
         </div>
       </Form>
-      {error && <p style={{ color: "red" }}>{error}</p>} //
+      {error && <p style={{ color: "red" }}>{error}</p>}
       {/* Display error message if there is an error*/}
     </div>
   );
