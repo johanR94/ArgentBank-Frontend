@@ -1,12 +1,44 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Description
+Le projet ArgentBank Frontend est une application développée en React. Elle permet à l'utilisateur de se connecter à son compte bancaire, de consulter et modifier ses informations personnelles, ainsi que d'effectuer des transactions bancaires.
 
-Currently, two official plugins are available:
+Le frontend est conçu pour interagir avec l'API backend d'ArgentBank, permettant à l'utilisateur de :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Se connecter et s'authentifier via un formulaire sécurisé.
 
-## Expanding the ESLint configuration
+Visualiser ses comptes bancaires et leur solde actuel.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Modifier ses informations personnelles (nom, email, etc.).
+
+
+
+# Prérequis
+Avant de commencer, assurez-vous d'avoir les prérequis suivants installés sur votre machine :
+
+Node.js version 14 ou supérieure
+
+npm version 6 ou supérieure
+
+# Installation
+
+Clonez le dépôt Git sur votre machine :
+```bash 
+git clone https://github.com/johanR94/ArgentBank-Frontend.git
+```
+
+Naviguez dans le répertoire du projet :
+```bash
+cd ArgentBank-Frontend
+```
+
+Installez les dépendances avec npm :
+```bash
+npm install
+```
+
+# Utilisation
+Démarrez l'application en mode développement :
+
+```bash
+npm start
+```
